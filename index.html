@@ -23,13 +23,15 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 3px solid #ff3b30;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .logo {
             font-size: 24px;
             font-weight: bold;
             color: #ff3b30;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         nav a {
             color: #fff;
@@ -41,7 +43,7 @@
             color: #ff3b30;
         }
         .hero {
-            height: 80vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -51,23 +53,84 @@
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1000') center/cover;
         }
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: 42px;
             color: #fff;
+            margin-bottom: 10px;
         }
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 25px;
-            color: #ddd;
+        .section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #ff3b30;
+            margin-bottom: 30px;
+        }
+        /* قسم الفيديوهات */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .video-card {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+            border: none;
+        }
+        .video-card h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        /* قسم التواصل */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 280px;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .contact-info a {
+            color: #ff3b30;
+            text-decoration: none;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background: #2b2b2b;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
         }
         .btn {
             background-color: #ff3b30;
             color: #fff;
-            padding: 12px 30px;
-            text-decoration: none;
+            padding: 10px 25px;
+            border: none;
+            cursor: pointer;
             font-weight: bold;
             border-radius: 5px;
-            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         .btn:hover {
             background-color: #e02d22;
@@ -77,30 +140,70 @@
             padding: 20px;
             background-color: #1e1e1e;
             color: #888;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر والقائمة -->
     <header>
         <div class="logo">🦅 Saqr Boxing Academy</div>
         <nav>
             <a href="#">الرئيسية</a>
-            <a href="#about">عن الأكاديمية</a>
-            <a href="#courses">التمارين</a>
+            <a href="#videos">الفيديوهات والتمارين</a>
             <a href="#contact">تواصل معنا</a>
         </nav>
     </header>
 
-    <!-- القسم الرئيسي (Hero Section) -->
     <section class="hero">
-        <h1>مرحباً بك في أكاديمية صقر للملاكمة</h1>
-        <p>تعلم فنون الملاكمة من الصفر وحتى الاحتراف مع أفضل التدريبات والأساسيات.</p>
-        <a href="#courses" class="btn">ابدأ التمرين الآن</a>
+        <h1>أكاديمية صقر للملاكمة</h1>
+        <p>تعلم الأساسيات والتقنيات الاحترافية خطوة بخطوة</p>
     </section>
 
-    <!-- الفوتر -->
+    <!-- قسم الفيديوهات -->
+    <section id="videos" class="section">
+        <h2 class="section-title">فيديوهات التمارين</h2>
+        <div class="videos-grid">
+            <!-- فيديو 1 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <h3>أساسيات الوقفة واللكمات السريعة</h3>
+            </div>
+            <!-- فيديو 2 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <h3>تمارين اللياقة والتحمل للملاكمين</h3>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border-color: #333;">
+
+    <!-- قسم التواصل -->
+    <section id="contact" class="section">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>معلومات الأكاديمية</h3>
+                <br>
+                <p>📍 <strong>العنوان:</strong> mansoura.shaburi street branch of ahmed maher/3x academy</p>
+                <p>📞 <strong>الهاتف / واتساب:</strong> <a href="https://wa.me/201016657704" target="_blank">+</a></p>
+                <p>✉️ <strong>البريد الإلكتروني:</strong> info@saqrboxing.com</p>
+            </div>
+            
+            <div class="contact-form">
+                <h3>أرسل لنا رسالة</h3>
+                <br>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="الاسم بالكامل" required>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <textarea rows="4" placeholder="رسالتك أو استفسارك..." required></textarea>
+                    <button type="submit" class="btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Saqr Boxing Academy. جميع الحقوق محفوظة.</p>
     </footer>
