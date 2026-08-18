@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saqr Boxing Academy | أكاديمية صقر للملاكمة</title>
+    <title>Saqr Boxing Academy | Train Like a Champion</title>
     <style>
         * {
             margin: 0;
@@ -11,11 +11,14 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
             background-color: #121212;
             color: #ffffff;
             line-height: 1.6;
         }
+
+        /* Navigation */
         header {
             background-color: #1e1e1e;
             padding: 20px 50px;
@@ -27,186 +30,314 @@
             top: 0;
             z-index: 1000;
         }
+
         .logo {
             font-size: 24px;
             font-weight: bold;
             color: #ff3b30;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
         nav a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
-            margin-right: 20px;
-            transition: 0.3s;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
         }
+
         nav a:hover {
             color: #ff3b30;
         }
+
+        /* Hero Section */
         .hero {
-            height: 60vh;
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1200') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1000') center/cover;
         }
+
         .hero h1 {
-            font-size: 42px;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: #ff3b30;
-            margin-bottom: 30px;
-        }
-        /* قسم الفيديوهات */
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .video-card {
-            background-color: #1e1e1e;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #333;
-        }
-        .video-card iframe {
-            width: 100%;
-            height: 200px;
-            border-radius: 5px;
-            border: none;
-        }
-        .video-card h3 {
-            margin-top: 10px;
-            font-size: 18px;
-        }
-        /* قسم التواصل */
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-between;
-            background-color: #1e1e1e;
-            padding: 30px;
-            border-radius: 8px;
-        }
-        .contact-info, .contact-form {
-            flex: 1;
-            min-width: 280px;
-        }
-        .contact-info p {
+            font-size: 3rem;
             margin-bottom: 15px;
-            font-size: 18px;
+            color: #ffffff;
+            text-transform: uppercase;
         }
-        .contact-info a {
-            color: #ff3b30;
-            text-decoration: none;
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #cccccc;
+            max-width: 600px;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            background: #2b2b2b;
-            border: 1px solid #444;
-            color: #fff;
-            border-radius: 4px;
-        }
+
         .btn {
             background-color: #ff3b30;
             color: #fff;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border: none;
-            cursor: pointer;
-            font-weight: bold;
             border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
             text-decoration: none;
-            display: inline-block;
+            transition: background 0.3s;
         }
+
         .btn:hover {
-            background-color: #e02d22;
+            background-color: #d32f2f;
         }
-        footer {
+
+        /* Section Titles */
+        .section-title {
             text-align: center;
-            padding: 20px;
+            font-size: 2.2rem;
+            margin: 50px 0 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title span {
+            color: #ff3b30;
+        }
+
+        /* Pricing Section */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 0 50px 50px;
+        }
+
+        .price-card {
             background-color: #1e1e1e;
-            color: #888;
-            margin-top: 40px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff3b30;
+        }
+
+        .price-card.popular {
+            border: 2px solid #ff3b30;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff3b30;
+            color: #fff;
+            padding: 2px 15px;
+            font-size: 0.8rem;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        .price-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff3b30;
+            margin-bottom: 20px;
+        }
+
+        .price-card .price span {
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .price-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #2a2a2a;
+            color: #ccc;
+        }
+
+        /* Store Section */
+        .store-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 0 50px 50px;
+        }
+
+        .product-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 260px;
+            border: 1px solid #333;
+            text-align: center;
+            padding-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card h4 {
+            font-size: 1.2rem;
+            margin: 15px 0 5px;
+        }
+
+        .product-card .product-price {
+            color: #ff3b30;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #222;
+            color: #777;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navbar -->
     <header>
-        <div class="logo">🦅 Saqr Boxing Academy</div>
+        <div class="logo">Saqr Boxing</div>
         <nav>
-            <a href="#">الرئيسية</a>
-            <a href="#videos">الفيديوهات والتمارين</a>
-            <a href="#contact">تواصل معنا</a>
+            <a href="#home">Home</a>
+            <a href="#memberships">Memberships</a>
+            <a href="#store">Pro Shop</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>أكاديمية صقر للملاكمة</h1>
-        <p>تعلم الأساسيات والتقنيات الاحترافية خطوة بخطوة</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Unleash Your Inner Champion</h1>
+        <p>Professional boxing training for all levels. Join Saqr Boxing Academy today and transform your strength, speed, and discipline.</p>
+        <a href="#memberships" class="btn">Join Now</a>
     </section>
 
-    <!-- قسم الفيديوهات -->
-    <section id="videos" class="section">
-        <h2 class="section-title">فيديوهات التمارين</h2>
-        <div class="videos-grid">
-            <!-- فيديو 1 -->
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                <h3>أساسيات الوقفة واللكمات السريعة</h3>
-            </div>
-            <!-- فيديو 2 -->
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                <h3>تمارين اللياقة والتحمل للملاكمين</h3>
-            </div>
-        </div>
-    </section>
-
-    <hr style="border-color: #333;">
-
-    <!-- قسم التواصل -->
-    <section id="contact" class="section">
-        <h2 class="section-title">تواصل معنا</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>معلومات الأكاديمية</h3>
-                <br>
-                <p>📍 <strong>العنوان:</strong> mansoura.shaburi street branch of ahmed maher/3x academy</p>
-                <p>📞 <strong>الهاتف / واتساب:</strong> <a href="https://wa.me/201016657704" target="_blank">+</a></p>
-                <p>✉️ <strong>البريد الإلكتروني:</strong> info@saqrboxing.com</p>
-            </div>
+    <!-- Pricing / Membership Plans -->
+    <section id="memberships">
+        <h2 class="section-title">Membership <span>Plans</span></h2>
+        <div class="pricing-container">
             
-            <div class="contact-form">
-                <h3>أرسل لنا رسالة</h3>
-                <br>
-                <form action="#" method="POST">
-                    <input type="text" placeholder="الاسم بالكامل" required>
-                    <input type="email" placeholder="البريد الإلكتروني" required>
-                    <textarea rows="4" placeholder="رسالتك أو استفسارك..." required></textarea>
-                    <button type="submit" class="btn">إرسال الرسالة</button>
-                </form>
+            <div class="price-card">
+                <h3>Basic Pass</h3>
+                <div class="price">$49 <span>/month</span></div>
+                <ul>
+                    <li>✔ 2 Training Sessions / Week</li>
+                    <li>✔ Access to Gym Equipment</li>
+                    <li>✔ Locker Room Access</li>
+                    <li>✖ Personal Trainer</li>
+                </ul>
+                <button class="btn">Select Plan</button>
             </div>
+
+            <div class="price-card popular">
+                <div class="popular-badge">MOST POPULAR</div>
+                <h3>Pro Fighter</h3>
+                <div class="price">$89 <span>/month</span></div>
+                <ul>
+                    <li>✔ Unlimited Gym Access</li>
+                    <li>✔ All Group Classes Included</li>
+                    <li>✔ 2 Personal Coaching Sessions</li>
+                    <li>✔ Free Academy T-Shirt</li>
+                </ul>
+                <button class="btn">Select Plan</button>
+            </div>
+
+            <div class="price-card">
+                <h3>Elite Champion</h3>
+                <div class="price">$149 <span>/month</span></div>
+                <ul>
+                    <li>✔ Full Access 24/7</li>
+                    <li>✔ Unlimited Personal Training</li>
+                    <li>✔ Customized Nutrition Plan</li>
+                    <li>✔ Free Gear Starter Kit</li>
+                </ul>
+                <button class="btn">Select Plan</button>
+            </div>
+
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Saqr Boxing Academy. جميع الحقوق محفوظة.</p>
+    <!-- Store Section -->
+    <section id="store">
+        <h2 class="section-title">Saqr Pro <span>Shop</span></h2>
+        <div class="store-container">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?q=80&w=400" alt="Boxing Gloves">
+                <h4>Pro Leather Gloves</h4>
+                <div class="product-price">$59.99</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400" alt="Hand Wraps">
+                <h4>Hand Wraps (4.5m)</h4>
+                <div class="product-price">$12.99</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=400" alt="Heavy Bag">
+                <h4>Heavy Punching Bag</h4>
+                <div class="product-price">$119.99</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=400" alt="Headgear">
+                <h4>Pro Protection Headgear</h4>
+                <div class="product-price">$45.00</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Saqr Boxing Academy. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
+   
