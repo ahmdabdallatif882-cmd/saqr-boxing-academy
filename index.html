@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saqr Boxing Academy | Train Like a Champion</title>
+    <title>Checkout | Saqr Boxing Academy</title>
     <style>
         * {
             margin: 0;
@@ -15,79 +15,80 @@
         body {
             background-color: #121212;
             color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        header {
-            background-color: #1e1e1e;
-            padding: 20px 50px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #ff3b30;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff3b30;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff3b30;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1200') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 0 20px;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: #ffffff;
+        .checkout-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .checkout-card h2 {
+            color: #ff3b30;
+            text-align: center;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            color: #cccccc;
-            max-width: 600px;
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background-color: #121212;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .payment-methods {
+            background-color: #161616;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .payment-info {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #252525;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            color: #4cd964;
         }
 
         .btn {
             background-color: #ff3b30;
             color: #fff;
-            padding: 12px 30px;
+            width: 100%;
+            padding: 14px;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             text-transform: uppercase;
-            text-decoration: none;
             transition: background 0.3s;
         }
 
@@ -95,381 +96,99 @@
             background-color: #d32f2f;
         }
 
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin: 50px 0 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title span {
-            color: #ff3b30;
-        }
-
-        /* Pricing Section */
-        .pricing-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            padding: 0 50px 50px;
-        }
-
-        .price-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 30px;
-            width: 300px;
-            text-align: center;
-            position: relative;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .price-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff3b30;
-        }
-
-        .price-card.popular {
-            border: 2px solid #ff3b30;
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ff3b30;
-            color: #fff;
-            padding: 2px 15px;
-            font-size: 0.8rem;
-            border-radius: 15px;
-            font-weight: bold;
-        }
-
-        .price-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .price-card .price {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #ff3b30;
-            margin-bottom: 20px;
-        }
-
-        .price-card .price span {
-            font-size: 0.9rem;
-            color: #aaa;
+        .back-link {
             display: block;
-        }
-
-        .price-card ul {
-            list-style: none;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .price-card ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid #2a2a2a;
-            color: #ccc;
-        }
-
-        /* Store Section */
-        .store-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            padding: 0 50px 50px;
-        }
-
-        .product-card {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            overflow: hidden;
-            width: 260px;
-            border: 1px solid #333;
             text-align: center;
-            padding-bottom: 20px;
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-card h4 {
-            font-size: 1.2rem;
-            margin: 15px 0 5px;
-        }
-
-        .product-card .product-price {
-            color: #ff3b30;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        /* Videos Section */
-        .videos-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            padding: 0 50px 50px;
-        }
-
-        .video-card {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            overflow: hidden;
-            width: 380px;
-            border: 1px solid #333;
-        }
-
-        .video-card iframe {
-            width: 100%;
-            height: 220px;
-            border: none;
-        }
-
-        .video-card h4 {
-            padding: 15px;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 0 50px 60px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .contact-info, .contact-form {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 30px;
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h3, .contact-form h3 {
-            color: #ff3b30;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            color: #ccc;
-        }
-
-        .contact-info strong {
-            color: #fff;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            background-color: #121212;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: 1px solid #ff3b30;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0a0a0a;
-            text-align: center;
-            padding: 25px;
-            border-top: 1px solid #222;
-            color: #777;
+            margin-top: 15px;
+            color: #888;
+            text-decoration: none;
             font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header>
-        <div class="logo">Saqr Boxing</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#memberships">Memberships</a>
-            <a href="#store">Pro Shop</a>
-            <a href="#videos">Videos</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>Unleash Your Inner Champion</h1>
-        <p>Professional boxing training for all levels. Join Saqr Boxing Academy today and transform your strength, speed, and discipline.</p>
-        <a href="#memberships" class="btn">Join Now</a>
-    </section>
-
-    <!-- Pricing / Membership Plans -->
-    <section id="memberships">
-        <h2 class="section-title">Membership <span>Plans</span></h2>
-        <div class="pricing-container">
-            
-            <div class="price-card">
-                <h3>Basic Pass</h3>
-                <div class="price">1,500 EGP <span>/ 3 Months</span></div>
-                <ul>
-                    <li>✔ 2 Training Sessions / Week</li>
-                    <li>✔ Access to Gym Equipment</li>
-                    <li>✔ Locker Room Access</li>
-                    <li>✖ Personal Trainer</li>
-                </ul>
-                <button class="btn">Select Plan</button>
+    <div class="checkout-card">
+        <h2>Complete Registration</h2>
+        
+        <form id="checkoutForm">
+            <!-- Full Name -->
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
             </div>
 
-            <div class="price-card popular">
-                <div class="popular-badge">MOST POPULAR</div>
-                <h3>Pro Fighter</h3>
-                <div class="price">2,700 EGP <span>/ 3 Months</span></div>
-                <ul>
-                    <li>✔ Unlimited Gym Access</li>
-                    <li>✔ All Group Classes Included</li>
-                    <li>✔ 2 Personal Coaching Sessions</li>
-                    <li>✔ Free Academy T-Shirt</li>
-                </ul>
-                <button class="btn">Select Plan</button>
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label>Phone Number (WhatsApp)</label>
+                <input type="tel" placeholder="01xxxxxxxxx" required>
             </div>
 
-            <div class="price-card">
-                <h3>Elite Champion</h3>
-                <div class="price">4,500 EGP <span>/ 3 Months</span></div>
-                <ul>
-                    <li>✔ Full Access 24/7</li>
-                    <li>✔ Unlimited Personal Training</li>
-                    <li>✔ Customized Nutrition Plan</li>
-                    <li>✔ Free Gear Starter Kit</li>
-                </ul>
-                <button class="btn">Select Plan</button>
+            <!-- Select Plan -->
+            <div class="form-group">
+                <label>Selected Plan</label>
+                <select id="planSelect">
+                    <option value="Basic - 1,500 EGP">Basic Pass (1,500 EGP / 3 Months)</option>
+                    <option value="Pro - 2,700 EGP">Pro Fighter (2,700 EGP / 3 Months)</option>
+                    <option value="Elite - 4,500 EGP">Elite Champion (4,500 EGP / 3 Months)</option>
+                </select>
             </div>
 
-        </div>
-    </section>
+            <!-- Payment Method -->
+            <div class="payment-methods">
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select id="paymentMethod" onchange="togglePaymentInfo()" required>
+                        <option value="">-- Choose Payment Method --</option>
+                        <option value="vodafone">Vodafone Cash</option>
+                        <option value="instapay">InstaPay</option>
+                    </select>
+                </div>
 
-    <!-- Store Section -->
-    <section id="store">
-        <h2 class="section-title">Saqr Pro <span>Shop</span></h2>
-        <div class="store-container">
+                <!-- Vodafone Cash Info -->
+                <div id="vodafoneInfo" class="payment-info">
+                    <strong>Vodafone Cash Number:</strong><br>
+                    📱 0100 000 0000<br>
+                    <small>* Please send the amount and keep the receipt screenshot.</small>
+                </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?q=80&w=400" alt="Boxing Gloves">
-                <h4>Pro Leather Gloves</h4>
-                <div class="product-price">1,800 EGP</div>
-                <button class="btn">Add to Cart</button>
+                <!-- InstaPay Info -->
+                <div id="instapayInfo" class="payment-info">
+                    <strong>InstaPay IPA / Mobile:</strong><br>
+                    💳 saqrboxing@instapay / 01000000000<br>
+                    <small>* Please transfer the exact amount using InstaPay.</small>
+                </div>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400" alt="Hand Wraps">
-                <h4>Hand Wraps (4.5m)</h4>
-                <div class="product-price">350 EGP</div>
-                <button class="btn">Add to Cart</button>
+            <!-- Transaction Reference -->
+            <div class="form-group">
+                <label>Transfer Reference / Wallet Number</label>
+                <input type="text" placeholder="Enter number sent from or Transaction ID" required>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=400" alt="Heavy Bag">
-                <h4>Heavy Punching Bag</h4>
-                <div class="product-price">3,500 EGP</div>
-                <button class="btn">Add to Cart</button>
-            </div>
+            <button type="submit" class="btn">Confirm & Send via WhatsApp</button>
+        </form>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=400" alt="Headgear">
-                <h4>Pro Protection Headgear</h4>
-                <div class="product-price">1,400 EGP</div>
-                <button class="btn">Add to Cart</button>
-            </div>
+        <a href="index.html" class="back-link">← Back to Academy Page</a>
+    </div>
 
-        </div>
-    </section>
+    <script>
+        function togglePaymentInfo() {
+            var method = document.getElementById("paymentMethod").value;
+            document.getElementById("vodafoneInfo").style.display = (method === "vodafone") ? "block" : "none";
+            document.getElementById("instapayInfo").style.display = (method === "instapay") ? "block" : "none";
+        }
 
-    <!-- Videos Section -->
-    <section id="videos">
-        <h2 class="section-title">Training <span>Highlights</span></h2>
-        <div class="videos-container">
-            
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Boxing Basics" allowfullscreen></iframe>
-                <h4>Basic Boxing Footwork & Stance</h4>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Heavy Bag Workout" allowfullscreen></iframe>
-                <h4>Intense Heavy Bag Drill Routine</h4>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sparring Session" allowfullscreen></iframe>
-                <h4>Pro Fighters Sparring Highlights</h4>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Get In <span>Touch</span></h2>
-        <div class="contact-container">
-            
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h3>Academy Location</h3>
-                <p><strong>📍 Address:</strong> 123 Champions Street, Cairo, Egypt</p>
-                <p><strong>📞 Phone / WhatsApp:</strong> +20 100 000 0000</p>
-                <p><strong>✉ Email:</strong> info@saqrboxing.com</p>
-                <p><strong>⏰ Working Hours:</strong> Sat - Thu: 10:00 AM - 11:00 PM</p>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Your Phone Number">
-                    <textarea rows="4" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Saqr Boxing Academy. All Rights Reserved.</p>
-    </footer>
+        document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Redirecting to WhatsApp to complete confirmation!");
+            // Here you can integrate WhatsApp API link directly
+        });
+    </script>
 
 </body>
 </html>
